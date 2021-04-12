@@ -1,0 +1,98 @@
+@media only screen and (max-device-width: 975px) {
+    .logo {
+        width: 40vw;
+    }
+    input[type="search"] {
+        width: 60vw;
+    }
+}
+body {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+nav {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    justify-content: flex-end;
+}
+nav a {
+    display: block;
+    padding: 5px 10px 5px 5px;
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+}
+.logo {
+    display: block;
+    width: 92;
+    height: 272;
+}
+.search-bar {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 25px;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+}
+.search-bar:hover {
+    border-color: rgba(223, 225, 229, 0);
+    box-shadow: 0 1px 5px 0 rgba(32, 33, 36, 0.3);
+}
+.search-icon {
+    display: block;
+    margin-top: 2px;
+    width: 20px;
+    height: auto;
+}
+input[type="search"] {
+    font-size: 16px;
+    color: rgba(0, 0, 0, .87);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 35vw;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background: url(../images/cross.svg) no-repeat;
+}
+input[type="submit"] {
+    display: inline-block;
+    margin: 11px 4px;
+    padding: 10px 15px 10px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    color: #3c4043;
+    outline-color: #4d90fe;
+    cursor: pointer;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+    color: #000;
+    border: 1px solid #bebebe;
+}
