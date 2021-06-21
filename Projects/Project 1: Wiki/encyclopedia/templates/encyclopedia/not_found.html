@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+    Encyclopedia | 404 Not Found
+{% endblock %}
+
+{% block body %}
+    <h4>404 Not Found</h4>
+
+    <img src="{% static 'encyclopedia/error.jpeg' %}" height="300">
+
+{% endblock %}

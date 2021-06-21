@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia | Search
+{% endblock %}
+
+{% block body %}
+
+    {% if related_results %}
+        <h4>Search results for <strong>{{ title }}</strong>:</h4>
+
+        <ul>
+            {% for title in related_results %}
+                <li><a href="{% url 'entry_page' title=title %}">{{ title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results containing your search term were found.</p>
+        <p>Your search term - <strong>{{ title }}</strong> - did not match any documents.</p>
+        <p>Check the <a href="{% url 'index' %}">existing pages</a> in the encyclopedia</p>
+    {% endif %}
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'entry_page' entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
