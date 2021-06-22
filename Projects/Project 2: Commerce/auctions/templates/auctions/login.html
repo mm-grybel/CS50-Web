@@ -1,0 +1,55 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Auctions | Login {% endblock %}
+
+{% block categories %}
+<div class="nav">
+    <div class="sb-sidenav-menu-heading">Categories</div>
+    {% for category in categories %}
+    <a class="nav-link" href="{% url 'category_details_view' category.category_name %}">
+        <div class="sb-nav-link-icon"><i class="fas fa-folder-open"></i></div>
+        {{ category }} 
+        <span class="sb-nav-link-icon"></span>
+        {% if category.count_active_auctions == 1 %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} item </span>
+        {% else %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} items </span>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block body %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5 ">
+        <h2>Login</h2>
+
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </div> <!-- form-group// -->                              
+            <button type="submit" class="btn btn-primary">Login</button> 
+            <p>
+                Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+            </p>                                                          
+        </form>
+    </div>
+</section>
+
+{% endblock %}

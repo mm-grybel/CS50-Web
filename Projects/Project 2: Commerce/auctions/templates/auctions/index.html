@@ -1,0 +1,83 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}Auctions | {{ title }} {% endblock %}
+
+
+{% block categories %}
+<div class="nav">
+    <div class="sb-sidenav-menu-heading">Categories</div>
+    {% for category in categories %}
+    <a class="nav-link" href="{% url 'category_details_view' category.category_name %}">
+        <div class="sb-nav-link-icon"><i class="fas fa-folder-open"></i></div>
+        {{ category }} 
+        <span class="sb-nav-link-icon"></span>
+        {% if category.count_active_auctions == 1 %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} item </span>
+        {% else %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} items </span>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+{% block body %}
+
+<!-- Active Auctions -->
+<div class="container-fluid px-4">
+    <h1 class="mt-4">{{ title }}</h1>
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% for auction in auctions %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+    
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{{ auction.image.image.url|default:'../../static/auctions/no_image.png' }}" alt="...">
+    
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{ auction.title }}</h5>
+    
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                        <div class="bi-star-fill"></div>
+                                    </div>
+                                
+                                    <!-- Product price-->
+                                    {% if auction.current_bid %}
+                                        &euro;{{auction.current_bid}}
+                                    {% else %}
+                                        &euro;{{auction.starting_bid}}
+                                    {% endif %}
+                            
+                                </div>
+                            </div>
+                        
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'auction_details_view' auction.id %}">View details</a></div>
+                            </div>
+    
+                        </div>
+                    </div>
+                {% endfor %}
+    
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+
+{% endblock %}

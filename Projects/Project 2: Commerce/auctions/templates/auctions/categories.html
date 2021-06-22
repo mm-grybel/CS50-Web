@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Auctions | Categories {% endblock %}
+
+{% block categories %}
+<div class="nav">
+    <div class="sb-sidenav-menu-heading">Categories</div>
+    {% for category in categories %}
+    <a class="nav-link" href="{% url 'category_details_view' category.category_name %}">
+        <div class="sb-nav-link-icon"><i class="fas fa-folder-open"></i></div>
+        {{ category }} 
+        <span class="sb-nav-link-icon"></span>
+        {% if category.count_active_auctions == 1 %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} item </span>
+        {% else %}
+        <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} items </span>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+{% block body %}
+    <ul class="nav">
+        <a class="navbar-brand" href="#">Categories</a>
+        {% for category in categories %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'category_details_view' category.category_name %}">{{ category }}</a>
+                <span class="badge badge-secondary badge-pill">{{ category.count_active_auctions }} </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
