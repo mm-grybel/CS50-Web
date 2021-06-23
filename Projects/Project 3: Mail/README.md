@@ -2,6 +2,7 @@
 
 Design a front-end for an email client that makes API calls to send and receive emails.
 
+
 ## API
 
 You’ll get mail, send mail, and update emails by using this application’s API. We’ve written the entire API for you (and documented it below), so that you can use it in your JavaScript code. (In fact, note that we have written **all** of the Python code for you for this project. You should be able to complete this project by just writing HTML and JavaScript).
@@ -11,7 +12,6 @@ This application supports the following API routes:
 ### GET /emails/`<str:mailbox>`
 
 Sending a GET request to /emails/<mailbox> where <mailbox> is either inbox, sent, or archive will return back to you (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if you send a GET request to /emails/inbox, you might get a JSON response like the below (representing two emails):
-
 ```
 [
     {
@@ -36,7 +36,6 @@ Sending a GET request to /emails/<mailbox> where <mailbox> is either inbox, sent
     }
 ]
 ```
-
 Notice that each email specifies its id (a unique identifier), a sender email address, an array of recipients, a string for subject, body, and timestamp, as well as two boolean values indicating whether the email has been read and whether the email has been archived.
 
 How would you get access to such values in JavaScript? Recall that in JavaScript, you can use fetch to make a web request. Therefore, the following JavaScript code
@@ -57,7 +56,6 @@ Note also that if you request an invalid mailbox (anything other than inbox, sen
 ### GET /emails/`<int:email_id>`
 
 Sending a GET request to /emails/email_id where email_id is an integer id for an email will return a JSON representation of the email, like the below:
-
 ```
 {
         "id": 100,
@@ -70,7 +68,6 @@ Sending a GET request to /emails/email_id where email_id is an integer id for an
         "archived": false
 }
 ```
-
 Note that if the email doesn’t exist, or if the user does not have access to the email, the route instead return a 404 Not Found error with a JSON response of {"error": "Email not found."}.
 
 To get email number 100, for example, you might write JavaScript code like
@@ -121,6 +118,7 @@ fetch('/emails/100', {
 would mark email number 100 as archived. The body of the PUT request could also be {archived: false} to unarchive the message, and likewise could be either {read: true} or read: false} to mark the email as read or unread, respectively.
 
 Using these four API routes (getting all emails in a mailbox, getting a single email, sending an email, and updating an existing email), you should have all the tools you now need to complete this project!
+
 
 ## Specification
 
