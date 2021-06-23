@@ -11,7 +11,7 @@ This application supports the following API routes:
 ### GET /emails/`<str:mailbox>`
 
 Sending a GET request to /emails/<mailbox> where <mailbox> is either inbox, sent, or archive will return back to you (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if you send a GET request to /emails/inbox, you might get a JSON response like the below (representing two emails):
-```
+```json
 [
     {
         "id": 100,
@@ -55,7 +55,7 @@ Note also that if you request an invalid mailbox (anything other than inbox, sen
 ### GET /emails/`<int:email_id>`
 
 Sending a GET request to /emails/email_id where email_id is an integer id for an email will return a JSON representation of the email, like the below:
-```
+```json
 {
         "id": 100,
         "sender": "foo@example.com",
