@@ -1,0 +1,15 @@
+textarea {
+    min-height: 300px;
+}
+
+.read {
+    background-color: #e0e0e0;
+}
+
+.unread {
+    background-color: #ffffff;
+}
+
+.items {
+    cursor: pointer;
+}
