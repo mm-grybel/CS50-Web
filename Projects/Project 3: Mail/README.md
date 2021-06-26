@@ -4,7 +4,7 @@ Design a front-end for an email client that makes API calls to send and receive 
 
 ## API
 
-You’ll get mail, send mail, and update emails by using this application’s API. We’ve written the entire API for you (and documented it below), so that you can use it in your JavaScript code. (In fact, note that we have written **all** of the Python code for you for this project. You should be able to complete this project by just writing HTML and JavaScript).
+You’ll get mail, send mail, and update emails by using this application’s API.
 
 This application supports the following API routes:
 
