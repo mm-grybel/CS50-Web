@@ -10,7 +10,7 @@ This application supports the following API routes:
 
 ### GET /emails/`<str:mailbox>`
 
-Sending a GET request to /emails/<mailbox> where <mailbox> is either inbox, sent, or archive will return back to you (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if you send a GET request to /emails/inbox, you might get a JSON response like the below (representing two emails):
+Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either inbox, sent, or archive will return back to you (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if you send a GET request to `/emails/inbox`, you might get a JSON response like the below (representing two emails):
 ```json
 [
     {
@@ -48,13 +48,13 @@ fetch('/emails/inbox')
     // ... do something else with emails ...
 });
 ```
-would make a GET request to /emails/inbox, convert the resulting response into JSON, and then provide to you the array of emails inside of the variable emails. You can print that value out to the browser’s console using console.log (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
+would make a GET request to `/emails/inbox`, convert the resulting response into JSON, and then provide to you the array of emails inside of the variable emails. You can print that value out to the browser’s console using console.log (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
 
 Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response `{"error": "Invalid mailbox."}`.
 
 ### GET /emails/`<int:email_id>`
 
-Sending a GET request to /emails/email_id where email_id is an integer id for an email will return a JSON representation of the email, like the below:
+Sending a GET request to `/emails/email_id` where `email_id` is an integer id for an email will return a JSON representation of the email, like the below:
 ```json
 {
         "id": 100,
@@ -83,7 +83,7 @@ fetch('/emails/100')
 
 ### POST /emails
 
-So far, we’ve seen how to get emails: either all of the emails in a mailbox, or just a single email. To send an email, you can send a POST request to the /emails route. The route requires three pieces of data to be submitted: a recipients value (a comma-separated string of all users to send an email to), a subject string, and a body string. For example, you could write JavaScript code like
+So far, we’ve seen how to get emails: either all of the emails in a mailbox, or just a single email. To send an email, you can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a recipients value (a comma-separated string of all users to send an email to), a subject string, and a body string. For example, you could write JavaScript code like
 ```javascript
 fetch('/emails', {
   method: 'POST',
@@ -99,13 +99,13 @@ fetch('/emails', {
     console.log(result);
 });
 ```
-If the email is sent successfully, the route will respond with a 201 status code and a JSON response of {"message": "Email sent successfully."}.
+If the email is sent successfully, the route will respond with a 201 status code and a JSON response of `{"message": "Email sent successfully."}`.
 
 Note that there must be at least one email recipient: if one isn’t provided, the route will instead respond with a 400 status code and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if you try to send an email to baz@example.com but there is no user with that email address, you’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
 
 ### PUT /emails/`<int:email_id>`
 
-The final route that you’ll need is the ability to mark an email as read/unread or as archived/unarchived. To do so, send a PUT request (instead of a GET) request to /emails/<email_id> where email_id is the id of the email you’re trying to modify. For example, JavaScript code like
+The final route that you’ll need is the ability to mark an email as read/unread or as archived/unarchived. To do so, send a PUT request (instead of a GET) request to `/emails/<email_id>` where email_id is the id of the email you’re trying to modify. For example, JavaScript code like
 ```javascript
 fetch('/emails/100', {
   method: 'PUT',
@@ -114,7 +114,7 @@ fetch('/emails/100', {
   })
 })
 ```
-would mark email number 100 as archived. The body of the PUT request could also be {archived: false} to unarchive the message, and likewise could be either {read: true} or read: false} to mark the email as read or unread, respectively.
+would mark email number 100 as archived. The body of the PUT request could also be `{archived: false}` to unarchive the message, and likewise could be either `{read: true}` or `{read: false}` to mark the email as read or unread, respectively.
 
 Using these four API routes (getting all emails in a mailbox, getting a single email, sending an email, and updating an existing email), you should have all the tools you now need to complete this project!
 
