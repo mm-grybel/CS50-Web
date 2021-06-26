@@ -50,7 +50,7 @@ fetch('/emails/inbox')
 ```
 would make a GET request to /emails/inbox, convert the resulting response into JSON, and then provide to you the array of emails inside of the variable emails. You can print that value out to the browser’s console using console.log (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
 
-Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response {"error": "Invalid mailbox."}.
+Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response `{"error": "Invalid mailbox."}`ß.
 
 ### GET /emails/`<int:email_id>`
 
