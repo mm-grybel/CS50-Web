@@ -50,7 +50,7 @@ fetch('/emails/inbox')
 ```
 would make a GET request to /emails/inbox, convert the resulting response into JSON, and then provide to you the array of emails inside of the variable emails. You can print that value out to the browser’s console using console.log (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
 
-Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response `{"error": "Invalid mailbox."}`ß.
+Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response `{"error": "Invalid mailbox."}`.
 
 ### GET /emails/`<int:email_id>`
 
@@ -67,7 +67,7 @@ Sending a GET request to /emails/email_id where email_id is an integer id for an
         "archived": false
 }
 ```
-Note that if the email doesn’t exist, or if the user does not have access to the email, the route instead return a 404 Not Found error with a JSON response of {"error": "Email not found."}.
+Note that if the email doesn’t exist, or if the user does not have access to the email, the route instead return a 404 Not Found error with a JSON response of `{"error": "Email not found."}`.
 
 To get email number 100, for example, you might write JavaScript code like
 ```javascript
@@ -101,7 +101,7 @@ fetch('/emails', {
 ```
 If the email is sent successfully, the route will respond with a 201 status code and a JSON response of {"message": "Email sent successfully."}.
 
-Note that there must be at least one email recipient: if one isn’t provided, the route will instead respond with a 400 status code and a JSON response of {"error": "At least one recipient required."}. All recipients must also be valid users who have registered on this particular web application: if you try to send an email to baz@example.com but there is no user with that email address, you’ll get a JSON response of {"error": "User with email baz@example.com does not exist."}.
+Note that there must be at least one email recipient: if one isn’t provided, the route will instead respond with a 400 status code and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if you try to send an email to baz@example.com but there is no user with that email address, you’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
 
 ### PUT /emails/`<int:email_id>`
 
