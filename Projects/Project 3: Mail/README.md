@@ -4,7 +4,7 @@ A front-end for an email client that makes API calls to send and receive emails.
 
 ## API
 
-### GET /emails/`<str:mailbox>`
+#### GET /emails/`<str:mailbox>`
 
 Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either inbox, sent, or archive returns back to the user (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if the user sends a GET request to `/emails/inbox`, they might get a JSON response like the below (representing two emails):
 ```json
@@ -48,7 +48,7 @@ would make a GET request to `/emails/inbox`, convert the resulting response into
 
 If the user requests an invalid mailbox (anything other than inbox, sent, or archive), they instead get back the JSON response `{"error": "Invalid mailbox."}`.
 
-### GET /emails/`<int:email_id>`
+#### GET /emails/`<int:email_id>`
 
 Sending a GET request to `/emails/email_id` where `email_id` is an integer id for an email returns a JSON representation of the email, like the below:
 ```json
@@ -77,7 +77,7 @@ fetch('/emails/100')
 });
 ```
 
-### POST /emails
+#### POST /emails
 
 To send an email, the user can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a `recipients` value (a comma-separated string of all users to send an email to), a `subject` string, and a `body` string. For example, we could write JavaScript code like
 ```javascript
@@ -99,7 +99,7 @@ If the email is sent successfully, the route responds with a 201 status code and
 
 There must be at least one email recipient: if one isn’t provided, the route instead responds with a 400 status code and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if the user tries to send an email to baz@example.com, but there is no user with that email address, they’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
 
-### PUT /emails/`<int:email_id>`
+#### PUT /emails/`<int:email_id>`
 
 This route provide the ability to mark an email as read/unread or as archived/unarchived. To do so, the user sends a PUT request (instead of a GET request) to `/emails/<email_id>` where `email_id` is the id of the email the user is trying to modify. For example, JavaScript code like
 ```javascript
