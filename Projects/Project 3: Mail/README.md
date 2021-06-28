@@ -1,16 +1,12 @@
 # Mail
 
-Design a front-end for an email client that makes API calls to send and receive emails.
+A front-end for an email client that makes API calls to send and receive emails.
 
 ## API
 
-You’ll get mail, send mail, and update emails by using this application’s API.
-
-This application supports the following API routes:
-
 ### GET /emails/`<str:mailbox>`
 
-Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either inbox, sent, or archive will return back to you (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if you send a GET request to `/emails/inbox`, you might get a JSON response like the below (representing two emails):
+Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either inbox, sent, or archive returns back to the user (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if the user sends a GET request to `/emails/inbox`, they might get a JSON response like the below (representing two emails):
 ```json
 [
     {
@@ -35,9 +31,9 @@ Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either inbox, 
     }
 ]
 ```
-Notice that each email specifies its id (a unique identifier), a sender email address, an array of recipients, a string for subject, body, and timestamp, as well as two boolean values indicating whether the email has been read and whether the email has been archived.
+Each email specifies its id (a unique identifier), a sender email address, an array of recipients, a string for subject, body, and timestamp, as well as two boolean values indicating whether the email has been read and whether the email has been archived.
 
-How would you get access to such values in JavaScript? Recall that in JavaScript, you can use fetch to make a web request. Therefore, the following JavaScript code
+In JavaScript, we can use fetch to make a web request. Therefore, the following JavaScript code
 ```javascript
 fetch('/emails/inbox')
 .then(response => response.json())
@@ -48,13 +44,13 @@ fetch('/emails/inbox')
     // ... do something else with emails ...
 });
 ```
-would make a GET request to `/emails/inbox`, convert the resulting response into JSON, and then provide to you the array of emails inside of the variable emails. You can print that value out to the browser’s console using console.log (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
+would make a GET request to `/emails/inbox`, convert the resulting response into JSON, and then provide the user with the array of emails inside the variable emails. We can print that value out to the browser’s console using `console.log` (if you don’t have any emails in your inbox, this will be an empty array), or do something else with that array.
 
-Note also that if you request an invalid mailbox (anything other than inbox, sent, or archive), you’ll instead get back the JSON response `{"error": "Invalid mailbox."}`.
+If the user requests an invalid mailbox (anything other than inbox, sent, or archive), they instead get back the JSON response `{"error": "Invalid mailbox."}`.
 
 ### GET /emails/`<int:email_id>`
 
-Sending a GET request to `/emails/email_id` where `email_id` is an integer id for an email will return a JSON representation of the email, like the below:
+Sending a GET request to `/emails/email_id` where `email_id` is an integer id for an email returns a JSON representation of the email, like the below:
 ```json
 {
         "id": 100,
@@ -67,9 +63,9 @@ Sending a GET request to `/emails/email_id` where `email_id` is an integer id fo
         "archived": false
 }
 ```
-Note that if the email doesn’t exist, or if the user does not have access to the email, the route instead return a 404 Not Found error with a JSON response of `{"error": "Email not found."}`.
+If the email doesn’t exist, or if the user does not have access to the email, the route instead returns a 404 Not Found error with a JSON response of `{"error": "Email not found."}`.
 
-To get email number 100, for example, you might write JavaScript code like
+To get email number 100, for example, we might write JavaScript code like
 ```javascript
 fetch('/emails/100')
 .then(response => response.json())
@@ -83,7 +79,7 @@ fetch('/emails/100')
 
 ### POST /emails
 
-So far, we’ve seen how to get emails: either all of the emails in a mailbox, or just a single email. To send an email, you can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a recipients value (a comma-separated string of all users to send an email to), a subject string, and a body string. For example, you could write JavaScript code like
+To send an email, the user can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a `recipients` value (a comma-separated string of all users to send an email to), a `subject` string, and a `body` string. For example, we could write JavaScript code like
 ```javascript
 fetch('/emails', {
   method: 'POST',
@@ -99,13 +95,13 @@ fetch('/emails', {
     console.log(result);
 });
 ```
-If the email is sent successfully, the route will respond with a 201 status code and a JSON response of `{"message": "Email sent successfully."}`.
+If the email is sent successfully, the route responds with a 201 status code and a JSON response of `{"message": "Email sent successfully."}`.
 
-Note that there must be at least one email recipient: if one isn’t provided, the route will instead respond with a 400 status code and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if you try to send an email to baz@example.com but there is no user with that email address, you’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
+There must be at least one email recipient: if one isn’t provided, the route instead responds with a 400 status code and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if the user tries to send an email to baz@example.com, but there is no user with that email address, they’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
 
 ### PUT /emails/`<int:email_id>`
 
-The final route that you’ll need is the ability to mark an email as read/unread or as archived/unarchived. To do so, send a PUT request (instead of a GET) request to `/emails/<email_id>` where email_id is the id of the email you’re trying to modify. For example, JavaScript code like
+This route provide the ability to mark an email as read/unread or as archived/unarchived. To do so, the user sends a PUT request (instead of a GET request) to `/emails/<email_id>` where `email_id` is the id of the email the user is trying to modify. For example, JavaScript code like
 ```javascript
 fetch('/emails/100', {
   method: 'PUT',
@@ -114,35 +110,30 @@ fetch('/emails/100', {
   })
 })
 ```
-would mark email number 100 as archived. The body of the PUT request could also be `{archived: false}` to unarchive the message, and likewise could be either `{read: true}` or `{read: false}` to mark the email as read or unread, respectively.
-
-Using these four API routes (getting all emails in a mailbox, getting a single email, sending an email, and updating an existing email), you should have all the tools you now need to complete this project!
+would mark email number 100 as archived.
 
 ## Specification
 
-Using JavaScript, HTML, and CSS, complete the implementation of your single-page-app email client inside of `inbox.js` (and not additional or other files; for grading purposes, we’re only going to be considering `inbox.js`!). You must fulfill the following requirements:
-
-* **Send Mail**: When a user submits the email composition form, add JavaScript code to actually send the email.
-    * You’ll likely want to make a `POST` request to `/emails`, passing in values for `recipients`, `subject`, and `body`.
-    * Once the email has been sent, load the user’s sent mailbox.
-* **Mailbox**: When a user visits their Inbox, Sent mailbox, or Archive, load the appropriate mailbox.
-    * You’ll likely want to make a `GET` request to `/emails/<mailbox>` to request the emails for a particular mailbox.
-    * When a mailbox is visited, the application should first query the API for the latest emails in that mailbox.
-    * When a mailbox is visited, the name of the mailbox should appear at the top of the page (this part is done for you).
-    * Each email should then be rendered in its own box (e.g. as a `<div>` with a border) that displays who the email is from, what the subject line is, and the timestamp of the email.
-    * If the email is unread, it should appear with a white background. If the email has been read, it should appear with a gray background.
-* **View Email**: When a user clicks on an email, the user should be taken to a view where they see the content of that email.
-    * You’ll likely want to make a `GET` request to `/emails/<email_id>` to request the email.
-    * Your application should show the email’s sender, recipients, subject, timestamp, and body.
-    * You’ll likely want to add an additional `div` to `inbox.html` (in addition to `emails-view` and `compose-view`) for displaying the email. Be sure to update your code to hide and show the right views when navigation options are clicked.
-    * Once the email has been clicked on, you should mark the email as read. Recall that you can send a `PUT` request to `/emails/<email_id>` to update whether an email is read or not.
-* **Archive and Unarchive**: Allow users to archive and unarchive emails that they have received.
-    * When viewing an Inbox email, the user should be presented with a button that lets them archive the email. When viewing an Archive email, the user should be presented with a button that lets them unarchive the email. This requirement does not apply to emails in the Sent mailbox.
-    * Recall that you can send a `PUT` request to `/emails/<email_id>` to mark an email as archived or unarchived.
-    * Once an email has been archived or unarchived, load the user’s inbox.
-* **Reply** : Allow users to reply to an email.
-    * When viewing an email, the user should be presented with a “Reply” button that lets them reply to the email.
-    * When the user clicks the “Reply” button, they should be taken to the email composition form.
-    * Pre-fill the composition form with the `recipient` field set to whoever sent the original email.
-    * Pre-fill the `subject` line. If the original email had a subject line of `foo`, the new subject line should be `Re: foo`. (If the subject line already begins with `Re:` , no need to add it again.)
-    * Pre-fill the body of the email with a line like `"On Jan 1 2020, 12:00 AM foo@example.com wrote:"` followed by the original text of the email.
+* **Send Mail**: When a user submits the email composition form, the JavaScript code actually sends the email.
+    * A `POST` request to `/emails` is made, with values for `recipients`, `subject`, and `body` passed.
+    * Once the email has been sent, the user’s sent mailbox is loaded.
+* **Mailbox**: When a user visits their Inbox, Sent mailbox, or Archive, the appropriate mailbox is loaded.
+    * A `GET` request to `/emails/<mailbox>` is made to request the emails for a particular mailbox.
+    * When a mailbox is visited, the application first queries the API for the latest emails in that mailbox.
+    * When a mailbox is visited, the name of the mailbox appears at the top of the page.
+    * Each email is then rendered in its own box that displays who the email is from, what the subject line is, and the timestamp of the email.
+    * If the email is unread, it appears with a white background. If the email has been read, it appears with a gray background.
+* **View Email**: When a user clicks on an email, the user is taken to a view where they see the content of that email.
+    * A `GET` request to `/emails/<email_id>` is made to request the email.
+    * The application shows the email’s sender, recipients, subject, timestamp, and body.
+    * Once the email has been clicked on, that email is marked as read. A `PUT` request to `/emails/<email_id>` is made to update whether an email is read or not.
+* **Archive and Unarchive**: The user can archive and unarchive emails that they have received.
+    * When viewing an Inbox email, the user is presented with a button that lets them archive the email. When viewing an Archive email, the user is presented with a button that enables them to unarchive the email. This requirement does not apply to emails in the Sent mailbox.
+    * A `PUT` request to `/emails/<email_id>` is made to mark an email as archived or unarchived.
+    * Once an email has been archived or unarchived, the user’s inbox is loaded.
+* **Reply** : The user can reply to an email.
+    * When viewing an email, the user is presented with a “Reply” button that lets them reply to the email.
+    * When the user clicks the “Reply” button, they are taken to the email composition form.
+    * The composition form is pre-filled with the `recipient` field set to whoever sent the original email.
+    * The `subject` line is pre-filled. If the original email had a subject line of `foo`, the new subject line would be `Re: foo`. (If the subject line already begins with `Re:` , no need to add it again.)
+    * The body of the email is pre-filled with a line like `"On Jan 1 2020, 12:00 AM foo@example.com wrote:"` followed by the original text of the email.
