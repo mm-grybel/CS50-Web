@@ -131,7 +131,7 @@ would mark email number 100 as archived.
     * When viewing an `Inbox` email, the user is presented with a button that lets them archive the email. When viewing an `Archive` email, the user is presented with a button that enables them to unarchive the email. This requirement does not apply to emails in the `Sent` mailbox.
     * A `PUT` request to `/emails/<email_id>` is made to mark an email as archived or unarchived.
     * Once an email has been archived or unarchived, the user’s `inbox` is loaded.
-* **Reply** : The user can reply to an email.
+* **Reply**: The user can reply to an email.
     * When viewing an email, the user is presented with a “Reply” button that lets them reply to the email.
     * When the user clicks the “Reply” button, they are taken to the email composition form.
     * The composition form is pre-filled with the `recipient` field set to whoever sent the original email.
