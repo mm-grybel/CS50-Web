@@ -4,7 +4,7 @@ A Twitter-like social network website for making posts and following users.
 
 ## Specification
 
-* **New Post**: Users who are signed in can write a new text-based post by filling in text into a `textarea` and then clicking a button to submit the post.
+* **New Post**: Users who are signed in can write a new text-based post by filling in text into a textarea and then clicking a button to submit the post.
 * **All Posts**: The “All Posts” link in the navigation bar takes the user to a page where they can see all posts from all users, with the most recent posts first.
     * Each post includes the username of the poster, the post content itself, the date and time at which the post was made, and the number of “likes” the post has.
 * **Profile Page**: Clicking on a username loads that user’s profile page. This page:
@@ -16,7 +16,7 @@ A Twitter-like social network website for making posts and following users.
     * This page is only available to users who are signed in.
 * **Pagination**: On any page that displays posts, posts are only displayed 10 on a page. If there are more than 10 posts, a “Next” button appears to take the user to the next page of posts (which is older than the current page of posts). If not on the first page, a “Previous” button appears to take the user to the previous page of posts.
 * **Edit Post**: Users can click an “Edit” button or link on any of their own posts to edit that post.
-    * When a user clicks “Edit” for one of their own posts, the content of their post is replaced with a `textarea` where the user can edit the content of their post.
+    * When a user clicks “Edit” for one of their own posts, the content of their post is replaced with a textarea where the user can edit the content of their post.
     * The user can then “Save” the edited post. Using JavaScript, this is achieved without requiring a reload of the entire page.
     * For security, it has been ensured that the application is designed such that it is not possible for a user, via any route, to edit another user’s posts.
 * **“Like” and “Unlike”**: Users can click a button or link on any post to toggle whether or not they “like” that post.
