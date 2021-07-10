@@ -16,5 +16,5 @@ A front-end for Google Search, Google Image Search, and Google Advanced Search.
     * Find pages with… “none of these words:”
 * **Appearance**: The four options are stacked vertically, and all of the text fields are left-aligned.
     * Consistent with Google’s CSS, the “Advanced Search” button is blue with white text. When the “Advanced Search” button is clicked, the user is taken to the search results page for their given query.
-* **Lucky**: An “I’m Feeling Lucky” button is located on the main Google Search page. Clicking this link takes users directly to the first Google search result for the query, bypassing the normal results page.
+* **Lucky**: An “I’m Feeling Lucky” button is located on the main Google Search page. Clicking this link takes the user directly to the first Google search result for the query, bypassing the normal results page.
 * **Aesthetics**: The CSS matches Google’s aesthetics.
