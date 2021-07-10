@@ -3,7 +3,7 @@ class Flight():
         self.capacity = capacity
         self.passengers = []
 
-    def add_passenger(self, name):
+    def add_passenger(self, name): # add_passenger adds a new passenger to a flight
         if not self.open_seats():
             return False
         self.passengers.append(name)
