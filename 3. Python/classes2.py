@@ -9,7 +9,7 @@ class Flight():
         self.passengers.append(name)
         return True
 
-    def open_seats(self):
+    def open_seats(self): # open_seats tells us how many open seats there are
         return self.capacity - len(self.passengers)
 
 
