@@ -6,7 +6,7 @@ A Wikipedia-like online encyclopedia.
 
 Wikipedia is a free online encyclopedia that consists of a number of encyclopedia entries on various topics.
 
-Each encyclopedia entry can be viewed by visiting that entry’s page. Visiting https://en.wikipedia.org/wiki/HTML, for example, shows the Wikipedia entry for HTML. The name of the requested page (HTML) is specified in the route `/wiki/HTML`. The page’s content is just HTML that a browser renders.
+Each encyclopedia entry can be viewed by visiting that entry’s page. Visiting https://en.wikipedia.org/wiki/HTML, for example, shows the Wikipedia entry for HTML. The name of the requested page (HTML) is specified in the route `/wiki/HTML`. The content of the page is just HTML that a browser renders.
 
 In practice, it would start to get tedious if every page on Wikipedia had to be written in HTML. Instead, it can be helpful to store encyclopedia entries using a lighter-weight human-friendly markup language. Wikipedia happens to use a markup language called `Wikitext`, but for this project, encyclopedia entries are stored using a markup language called [Markdown](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
