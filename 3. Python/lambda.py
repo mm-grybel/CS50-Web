@@ -4,6 +4,6 @@ people = [
     {"name": "Draco", "house": "Slytherin"}
 ]
 
-people.sort(key=lambda person:  person["name"])
+people.sort(key=lambda person: person["name"])
 
 print(people)
