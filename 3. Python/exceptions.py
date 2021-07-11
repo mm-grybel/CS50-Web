@@ -3,4 +3,4 @@ y = int(input("y: "))
 
 result = x  / y
 
-print(f"x / y = {result}")
+print(f"{x} / {y} = {result}")
