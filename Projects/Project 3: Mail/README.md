@@ -135,5 +135,5 @@ would mark email number 100 as archived.
     * When viewing an email, the user is presented with a “Reply” button that lets them reply to the email.
     * When the user clicks the “Reply” button, they are taken to the email composition form.
     * The composition form is pre-filled with the `recipient` field set to whoever sent the original email.
-    * The `subject` line is pre-filled. If the original email had a subject line of `foo`, the new subject line would be `Re: foo`. (If the subject line already begins with `Re:` , no need to add it again.)
+    * The `subject` line is pre-filled. If the original email had a subject line of `foo`, the new subject line would be `Re: foo`. (If the subject line already begins with `Re:`, no need to add it again.)
     * The `body` of the email is pre-filled with a line like `"On Jan 1 2020, 12:00 AM foo@example.com wrote:"` followed by the original text of the email.
