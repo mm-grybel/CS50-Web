@@ -1,6 +1,6 @@
 # Network
 
-A Twitter-like social network website for making posts and following users.
+A Twitter-like social network website that allows users to make posts, follow other users, and “like” posts.
 
 ## Specification
 
