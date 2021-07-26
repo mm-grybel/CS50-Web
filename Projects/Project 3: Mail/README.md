@@ -4,6 +4,8 @@ A front-end for an email client that makes API calls to send and receive emails.
 
 ## API
 
+The application supports the following API routes:
+
 #### GET /emails/`<str:mailbox>`
 
 Sending a GET request to `/emails/<mailbox>` where `<mailbox>` is either `inbox`, `sent`, or `archive` returns back to the user (in JSON form) a list of all emails in that mailbox, in reverse chronological order. For example, if the user sends a GET request to `/emails/inbox`, they get a JSON response like the below (representing two emails):
