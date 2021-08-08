@@ -5,7 +5,7 @@ A front-end for Google Search, Google Image Search, and Google Advanced Search.
 ## Specification
 
 * **Pages**: The website consists of three pages: one for Google Search, one for Google Image Search, and one for Google Advanced Search.
-    * On the Google Search page, there are links in the upper-right of the page to go to Image Search or Advanced Search. There is a link in the upper-right to go back to Google Search on each of the other two pages.
+    * There are links in the upper-right of the Google Search page to go to Image Search or Advanced Search. There is a link in the upper-right to go back to Google Search on each of the other two pages.
 * **Query Text**: On the Google Search page, the user can type in a query, click “Google Search”, and be taken to the Google search results for that page.
     * The search bar is centered with rounded corners. The search button is also centered, and it is beneath the search bar.
 * **Query Images**: On the Google Image Search page, the user can type in a query, click a search button, and be taken to the Google Image search results for that page.
