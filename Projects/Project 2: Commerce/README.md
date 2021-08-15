@@ -8,7 +8,7 @@ An eBay-like e-commerce auction site that allows users to post auction listings,
 * **Active Listings Page**: The default route of the web application which lets users view all of the currently active auction listings. For each active listing, this page displays the title, description, current price, and photo (if one exists for the listing).
 * **Listing Page**: Clicking on a listing takes users to a page specific to that listing. On that page, users can view all details about the listing, including the current price for the listing.
     * If the user is signed in, they can add the item to their “Watchlist.” If the item is already on the "Watchlist", the user can remove it.
-    * If the user is signed in, the user can bid on the item. The bid must be at least as large as the starting bid and must be greater than any other bids that have been placed (if any). If the bid doesn’t meet those criteria, the user is presented with an error.
+    * If the user is signed in, the user can bid on the item. The bid must be at least as large as the starting bid and must be greater than any other bids that have been placed (if any). If the bid does not meet those criteria, the user is presented with an error.
     * If the user is signed in and is the one who created the listing, the user can “close” the auction from this page, which makes the highest bidder the winner of the auction and makes the listing no longer active.
     * If a user is signed in on a closed listing page, and the user has won that auction, the page says so.
     * Users who are signed in can add comments to the listing page. The listing page displays all comments that have been made on the listing.
