@@ -65,7 +65,7 @@ Sending a GET request to `/emails/email_id` where `email_id` is an integer id fo
         "archived": false
 }
 ```
-If the email doesn’t exist, or if the user does not have access to the email, the route instead returns a `404 Not Found error` with a JSON response of `{"error": "Email not found."}`.
+If the email does not exist, or if the user does not have access to the email, the route instead returns a `404 Not Found error` with a JSON response of `{"error": "Email not found."}`.
 
 To get email number 100, for example, we might write JavaScript code like
 ```javascript
