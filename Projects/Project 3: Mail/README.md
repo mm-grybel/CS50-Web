@@ -46,7 +46,7 @@ fetch('/emails/inbox')
     // ... do something else with emails ...
 });
 ```
-would make a GET request to `/emails/inbox`, convert the resulting response into JSON, and then provide the user with the array of emails inside the variable `emails`. We can print that value out to the browser’s console using `console.log` (if the user doesn't have any emails in their inbox, this will be an empty array), or do something else with that array.
+would make a GET request to `/emails/inbox`, convert the resulting response into JSON, and then provide the user with the array of emails inside the variable `emails`. We can print that value out to the browser’s console using `console.log` (if the user does not have any emails in their inbox, this will be an empty array), or do something else with that array.
 
 If the user requests an invalid mailbox (anything other than `inbox`, `sent`, or `archive`), they instead get back the JSON response `{"error": "Invalid mailbox."}`.
 
