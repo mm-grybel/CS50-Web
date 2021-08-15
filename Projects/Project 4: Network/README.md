@@ -4,7 +4,7 @@ A Twitter-like social network website that allows users to make posts, follow ot
 
 ## Specification
 
-* **New Post**: Users who are signed in can write a new text-based post by filling in text into a textarea and then clicking a button to submit the post.
+* **New Post**: Users who are signed in can write a new text-based post by filling in text into a `textarea` and then clicking a button to submit the post.
 * **All Posts**: The “All Posts” link in the navigation bar takes the user to a page where they can see all posts from all users, with the most recent posts first.
     * Each post includes the username of the poster, the post content itself, the date and time at which the post was made, and the number of “likes” the post has.
 * **Profile Page**: Clicking on a username loads that user’s profile page. This page:
