@@ -67,7 +67,7 @@ Sending a GET request to `/emails/email_id` where `email_id` is an integer id fo
 ```
 If the email does not exist, or if the user does not have access to the email, the route instead returns a `404 Not Found error` with a JSON response of `{"error": "Email not found."}`.
 
-To get email number 100, for example, we might write JavaScript code like
+To get email number 100, for example, we might write JavaScript code like:
 ```javascript
 fetch('/emails/100')
 .then(response => response.json())
@@ -81,7 +81,7 @@ fetch('/emails/100')
 
 #### POST /emails
 
-To send an email, the user can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a `recipients` value (a comma-separated string of all users to send an email to), a `subject` string, and a `body` string. For example, we could write JavaScript code like
+To send an email, the user can send a POST request to the `/emails` route. The route requires three pieces of data to be submitted: a `recipients` value (a comma-separated string of all users to send an email to), a `subject` string, and a `body` string. For example, we could write JavaScript code like:
 ```javascript
 fetch('/emails', {
   method: 'POST',
