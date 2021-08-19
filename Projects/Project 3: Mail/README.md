@@ -99,7 +99,7 @@ fetch('/emails', {
 ```
 If the email is sent successfully, the route responds with a `201 status code` and a JSON response of `{"message": "Email sent successfully."}`.
 
-There must be at least one email recipient: if one isn’t provided, the route instead responds with a `400 status code` and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if the user tries to send an email to baz@example.com, but there is no user with that email address, they’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
+There must be at least one email recipient: if one is not provided, the route instead responds with a `400 status code` and a JSON response of `{"error": "At least one recipient required."}`. All recipients must also be valid users who have registered on this particular web application: if the user tries to send an email to baz@example.com, but there is no user with that email address, they’ll get a JSON response of `{"error": "User with email baz@example.com does not exist."}`.
 
 #### PUT /emails/`<int:email_id>`
 
