@@ -116,7 +116,7 @@ would mark email number 100 as archived.
 
 ## Specification
 
-* **Send Mail**: When a user submits the email composition form, the JavaScript code actually sends the email.
+* **Send Mail**: When a user submits the email composition form, the JavaScript code sends the email.
     * A `POST` request to `/emails` is made, with values for `recipients`, `subject`, and `body` passed.
     * Once the email has been sent, the user’s `sent` mailbox is loaded.
 * **Mailbox**: When a user visits their `Inbox`, `Sent mailbox`, or `Archive`, the appropriate mailbox is loaded.
