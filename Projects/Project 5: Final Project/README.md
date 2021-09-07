@@ -76,7 +76,7 @@ For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 
 #### Horizontal Bar Chart
 
-![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png?raw=true)
+![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/macronutrients_breakdown_bar.png?raw=true)
 
 A horizontal bar chart displayed on the Food Details page shows the macronutrients breakdown of each food available in the applications.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodDetails.js`
