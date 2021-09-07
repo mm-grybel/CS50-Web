@@ -47,8 +47,6 @@
 
 ## Distinctiveness and Complexity
 
-I believe that CS50W Food Tracker is sufficiently distinct from the other projects in this course and more complex than the previous projects that I have already completed.
-
 CS50W Food Tracker utilizes **Django** on the back-end and **JavaScript**, **HTML**, and **CSS** on the front-end.
 
 CS50W Food Tracker allows users to track their food consumption, count calories and macronutrients in their diet, and monitor their weight. One of the main components of this application that makes it unique and distinct from the other projects in this course is a variety of **visualization tools** written in **JavaScript** (using **Chart.js** and **jQuery** JavaScript libraries). These visualization tools help the users of the application to organize and clarify their data and better track their progress to help them achieve their nutrition goals.
@@ -64,21 +62,21 @@ For details, see file: `foodtracker/static/foodtracker/js/userProfile.js`
 
 #### Doughnut Chart
 
-![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png)
+![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png?raw=true)
 
 A doughnut chart displayed on the Food Log page shows the macronutrients breakdown of all the foods consumed by the user and registered in their Food Log (the total fat, carbohydrate, and protein values). The total values are dynamically calculated in JavaScript as users add and delete new foods from their Food Log.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 
 #### Calorie Goal Progress Bar
 
-![plot](/foodtracker/static/foodtracker/images/progress_bar.png)
+![plot](/foodtracker/static/foodtracker/images/progress_bar.png?raw=true)
 
 An animated progress bar displayed on the Food Log page indicates the user's progress towards their daily calorie goal. The total calories value is dynamically calculated in JavaScript as users add and delete new foods from their Food Log.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 
 #### Horizontal Bar Chart
 
-![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_bar.png)
+![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_bar.png?raw=true)
 
 A horizontal bar chart displayed on the Food Details page shows the macronutrients breakdown of each food available in the applications.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodDetails.js`
