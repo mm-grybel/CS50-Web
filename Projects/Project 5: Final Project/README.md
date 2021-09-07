@@ -55,28 +55,28 @@ Visualization tools in the CS50W Food Tracker include:
 
 #### Area Chart
 
-![plot](/foodtracker/static/foodtracker/images/weight_history.png)
+![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/weight_history.png?raw=true)
 
 An area chart displayed on the User Profile page helps users visualize their weight history and better track their results. The chart is updated dynamically in JavaScript as users add and remove records from their Weight Log.<br />
 For details, see file: `foodtracker/static/foodtracker/js/userProfile.js`
 
 #### Doughnut Chart
 
-![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png?raw=true)
+![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png?raw=true)
 
 A doughnut chart displayed on the Food Log page shows the macronutrients breakdown of all the foods consumed by the user and registered in their Food Log (the total fat, carbohydrate, and protein values). The total values are dynamically calculated in JavaScript as users add and delete new foods from their Food Log.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 
 #### Calorie Goal Progress Bar
 
-![plot](/foodtracker/static/foodtracker/images/progress_bar.png?raw=true)
+![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/progress_bar.png?raw=true)
 
 An animated progress bar displayed on the Food Log page indicates the user's progress towards their daily calorie goal. The total calories value is dynamically calculated in JavaScript as users add and delete new foods from their Food Log.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 
 #### Horizontal Bar Chart
 
-![plot](/foodtracker/static/foodtracker/images/macronutrients_breakdown_bar.png?raw=true)
+![plot](https://github.com/mm-grybel/CS50W/blob/master/Projects/Project%205:%20Final%20Project/foodtracker/static/foodtracker/images/macronutrients_breakdown_doughnut.png?raw=true)
 
 A horizontal bar chart displayed on the Food Details page shows the macronutrients breakdown of each food available in the applications.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodDetails.js`
