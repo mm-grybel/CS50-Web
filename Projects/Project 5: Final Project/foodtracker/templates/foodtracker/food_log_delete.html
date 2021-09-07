@@ -1,0 +1,52 @@
+{% extends 'foodtracker/layout.html' %}
+
+{% block title %}CS50W Food Tracker | Food Log{% endblock %}
+
+{% block categories %}
+<div class='nav'>
+    <div class='sb-sidenav-menu-heading'>Categories</div>
+    {% for category in categories %}
+    <a class='nav-link' href="{% url 'category_details_view' category.category_name %}">
+        <div class='sb-nav-link-icon'><i class='fas fa-folder-open'></i></div>
+        {{ category }} 
+        <span class='sb-nav-link-icon'></span>
+        <span class='badge-custom badge-warning badge-pill'>
+            {{ category.count_food_by_category }}
+        </span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block body %}
+<div class='py-4 bg-light mt-auto'>
+    <div class='container-fluid px-4'>
+
+        <h2>Food Log</h2>
+
+            <div class='row justify-content-center'>
+                <div class='col-xl-12'>
+                    <div class='card bg-light mb-4 rounded'>
+                        <div class='card-body'>
+    
+                            <div class='form-group'>
+                                <form method='POST'>
+                                    {% csrf_token %}
+
+                                    Are you sure you want to delete this food item?
+                                    <button type='submit' class='btn btn-custom'>
+                                        Delete
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+{% endblock %}

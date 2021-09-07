@@ -1,0 +1,64 @@
+{% extends 'foodtracker/layout.html' %}
+
+{% block title %}CS50W Food Tracker | Add Food Item{% endblock %}
+
+{% block categories %}
+<div class='nav'>
+    <div class='sb-sidenav-menu-heading'>Categories</div>
+    {% for category in categories %}
+    <a class='nav-link' href="{% url 'category_details_view' category.category_name %}">
+        <div class='sb-nav-link-icon'><i class='fas fa-folder-open'></i></div>
+        {{ category }} 
+        <span class='sb-nav-link-icon'></span>
+        <span class='badge-custom badge-warning badge-pill'>
+            {{ category.count_food_by_category }}
+        </span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block body %}
+<div class='py-4 bg-light mt-auto'>
+    <div class='container px-4'>
+
+        {% if success %}
+            <br>
+            <div class='alert alert-dismissible alert-success' role='alert'>
+                <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+                The new food item added successfully.
+            </div>
+        {% else %}
+            <h2>Add Food Item</h2>
+            <p>Enter the details of the new food item</p>
+            
+                <div class='row justify-content-center'>
+                    <div class='col-xl-12'>
+                        <div class='card bg-light mb-4 rounded'>
+                            <div class='card-body'>
+    
+                                <div class='form-group'>
+                                    <form action="{% url 'food_add' %}" method='POST' enctype='multipart/form-data'>
+                                        {% csrf_token %}
+                                        <div class='form-group'>
+                                            {{ food_form.as_p }}
+    
+                                            {{ image_form.management_form }}
+                                            {% for form in image_form %}
+                                                {{ form.as_p }}
+                                            {% endfor %}
+                                            <button type='submit' class='btn btn-custom'>Save</button>
+                                            <a href="{% url 'index' %}" class='btn btn-outline-secondary'>Cancel</a>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

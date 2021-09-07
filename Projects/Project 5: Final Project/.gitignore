@@ -1,0 +1,8 @@
+foodtracker/media/images/
+.DS_Store
+.idea
+.vscode
+*.pyc
+venv
+db.sqlite3
+db.sqlite3-journal

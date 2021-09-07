@@ -1,0 +1,88 @@
+{% extends 'foodtracker/layout.html' %}
+
+{% block title %}CS50W Food Tracker | {{ title }} {% endblock %}
+
+{% block categories %}
+<div class='nav'>
+    <div class='sb-sidenav-menu-heading'>Categories</div>
+    {% for category in categories %}
+    <a class='nav-link' href="{% url 'category_details_view' category.category_name %}">
+        <div class='sb-nav-link-icon'><i class='fas fa-folder-open'></i></div>
+        {{ category }} 
+        <span class='sb-nav-link-icon'></span>
+        <span class='badge-custom badge-warning badge-pill'>
+            {{ category.count_food_by_category }}
+        </span>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block body %}
+<div class='py-4 bg-light mt-auto'>
+    <div class='container px-4'>
+
+        <h1 class='mt-4'>Category: {{ title }}</h1>
+
+        <div class='row justify-content-center'>
+
+        {% if foods_count > 0 %}
+
+            {% for food in foods %}
+                <div class='col-sm-12 col-md-12 col-lg-4 col-xl-3'>
+                    <div class='card bg-light mb-3 rounded'>
+
+                        <!-- Food image -->
+                        <a href='#'>
+                            <img 
+                                src="{{ food.image.image.url|default:'../../static/foodtracker/images/no_image.png' }}" 
+                                class='img-fluid'
+                                alt='food image'
+                            >
+                        </a>
+            
+                        <div class='card-body'>
+                            <h4 class='card-title text-custom'>
+                                <!-- Food name -->
+                                <strong>{{ food.food_name }}</strong>
+                            </h4>
+
+                            <p class='card-text'>
+                                <div class='my-3'>
+                                    <!-- Food category -->
+                                    Category: {{ food.category }}
+                                </div>
+                            </p>
+
+                            <p class='card-text'>
+                                <div class='my-3'>
+                                    <!-- Food calories -->
+                                    <strong>{{ food.calories}} calories</strong> in {{ food.quantity|floatformat:0 }} grams
+                                </div>
+                            </p>
+
+                            <p class='card-text'>
+                                <div class='my-3'>
+                                    <a href="{% url 'food_details' food.id %}" class='card-link' style='color:#593196;'>
+                                        View details
+                                    </a>
+                                </div>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+            <br>
+            <div class='alert alert-info' role='alert'>
+                No foods in this category.
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
