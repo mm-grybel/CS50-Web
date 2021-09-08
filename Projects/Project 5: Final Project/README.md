@@ -85,6 +85,8 @@ For details, see file: `foodtracker/static/foodtracker/js/foodDetails.js`
 
 Another characteristic of CS50W Food Tracker is its **responsive design** - the application renders well on a variety of devices and screen sizes due to the use of **Bootstrap**, which is a CSS framework directed at responsive, mobile-first front-end web development. All visualization tools in the application are responsive as well.
 
+### Models
+
 CS50W Food Tracker utilizes **Django** on the back-end and uses **six models**:
 * `User`
 * `Food`
@@ -94,6 +96,8 @@ CS50W Food Tracker utilizes **Django** on the back-end and uses **six models**:
 * `Image`
 
 For details, see file: `foodtracker/models.py`
+
+### Django Forms
 
 The application also utilizes **Django Forms**.<br />
 For details, see file: `foodtracker/forms.py`
