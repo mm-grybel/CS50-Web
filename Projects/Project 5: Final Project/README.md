@@ -81,6 +81,7 @@ For details, see file: `foodtracker/static/foodtracker/js/foodLog.js`
 A horizontal bar chart displayed on the Food Details page shows the macronutrients breakdown of each food available in the applications.<br />
 For details, see file: `foodtracker/static/foodtracker/js/foodDetails.js`
 
+### Responsive Design
 
 Another characteristic of CS50W Food Tracker is its **responsive design** - the application renders well on a variety of devices and screen sizes due to the use of **Bootstrap**, which is a CSS framework directed at responsive, mobile-first front-end web development. All visualization tools in the application are responsive as well.
 
